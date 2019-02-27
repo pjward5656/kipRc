@@ -13,20 +13,24 @@
 #'
 get_substances<-function(data, ...){
   fields<-dplyr::quos(...)
-  suppressMessages(data %>%
+  data2<-data %>%
+    dplyr::mutate(rowid=dplyr::row_number())
+  suppressMessages(data2 %>%
                      dplyr::mutate(scan=paste(!!! fields, sep=" ")) %>%
                      tidytext::unnest_tokens(word, scan) %>%
                      dplyr::anti_join(tidytext::stop_words)  %>%
                      dplyr::filter(!stringr::str_detect(word, pattern = "[[:digit:]]"),
                                    !stringr::str_detect(word, pattern = "\\b(.)\\b"),
                                    word %in% kipRc::drugs$Term) %>%
-                     dplyr::count(casenumber, word) %>%
-                     dplyr::left_join(drugs, by=c("word"="Term")) %>%
-                     dplyr::select(casenumber, Drug) %>%
+                     dplyr::count(rowid, word) %>%
+                     dplyr::left_join(kipRc::drugs, by=c("word"="Term")) %>%
+                     dplyr::select(rowid, Drug) %>%
                      unique() %>%
                      dplyr::mutate(indicator=1) %>%
                      tidyr::spread(key=Drug, value=indicator) %>%
                      purrr::map_df(replace_na, 0) %>%
-                     dplyr::right_join(data))
+                     dplyr::right_join(data2) %>%
+                     dplyr::select(-(rowid))
+                   )
 }
 
