@@ -16,4 +16,5 @@ Imports:
     tidytext,
     stringr,
     tidyr,
-    purrr
+    purrr,
+    magrittr

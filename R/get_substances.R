@@ -14,10 +14,10 @@ get_substances<-function(data, ...){
   suppressMessages(data %>%
                      dplyr::mutate(scan=paste(!!! fields, sep=" ")) %>%
                      tidytext::unnest_tokens(word, scan) %>%
-                     dplyr::anti_join(stop_words)  %>%
+                     dplyr::anti_join(tidytext::stop_words)  %>%
                      dplyr::filter(!stringr::str_detect(word, pattern = "[[:digit:]]"),
                                    !stringr::str_detect(word, pattern = "\\b(.)\\b"),
-                                   word %in% drugs$Term) %>%
+                                   word %in% kipRc::drugs$Term) %>%
                      dplyr::count(casenumber, word) %>%
                      dplyr::left_join(drugs, by=c("word"="Term")) %>%
                      dplyr::select(casenumber, Drug) %>%
