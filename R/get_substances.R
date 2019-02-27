@@ -8,7 +8,8 @@
 #' @export
 #' @examples
 #' get_substances(data=death_certs, lina, lineb, linec, lined, injurydescription, contributingcauses)
-
+#' @importFrom magrittr %>%
+#'
 get_substances<-function(data, ...){
   fields<-dplyr::quos(...)
   suppressMessages(data %>%
