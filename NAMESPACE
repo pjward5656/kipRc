@@ -3,3 +3,4 @@
 export(get_substances)
 export(rate_ci)
 importFrom(magrittr,"%>%")
+importFrom(tidyr,replace_na)

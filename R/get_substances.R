@@ -9,6 +9,7 @@
 #' @examples
 #' get_substances(data=death_certs, lina, lineb, linec, lined, injurydescription, contributingcauses)
 #' @importFrom magrittr %>%
+#' @importFrom tidyr replace_na
 #'
 get_substances<-function(data, ...){
   fields<-dplyr::quos(...)
@@ -25,7 +26,7 @@ get_substances<-function(data, ...){
                      unique() %>%
                      dplyr::mutate(indicator=1) %>%
                      tidyr::spread(key=Drug, value=indicator) %>%
-                     purrr::map_df(dplyr::replace_na, 0) %>%
+                     purrr::map_df(replace_na, 0) %>%
                      dplyr::right_join(data))
 }
 
