@@ -26,3 +26,10 @@ To be added:
   reg_summary()-function to summarize a dataframe by a region variable
   
   Percent change
+
+Example: Take raw DCs, identify drug overdose deaths and pull substances from free text:
+
+library(tidyverse)
+
+df<-id_ods(deaths, C_UNDER_C) %>% 
+  get_substances(data=., C_UNDER_MC, C_SUPP_MC1, C_SUPP_MC2, C_SUPP_MC3, C_SIGCC_MC, I_DESCRIPT)
