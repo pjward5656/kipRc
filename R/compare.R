@@ -24,8 +24,8 @@ compare<-function(new, old, ...){
                         names_to="var",
                         values_to="old_value")
 
-  new_long %>%
-    dplyr::full_join(old_long) %>%
-    dplyr::mutate(updated=ifelse(new_value!=old_value, 1, 0)) %>%
-    dplyr::arrange(!!! id_col)
+  suppressMessages(new_long %>%
+                     dplyr::full_join(old_long) %>%
+                     dplyr::mutate(updated=ifelse(new_value!=old_value, 1, 0)) %>%
+                     dplyr::arrange(!!! id_col))
 }
