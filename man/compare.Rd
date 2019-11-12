@@ -11,7 +11,7 @@ compare(new, old, ...)
 
 \item{old}{The "old" dataframe to compare the new dataframe to.}
 
-\item{...}{The ID column(s) to be that indicate a unique record to compare between dataframes.}
+\item{...}{The ID column(s) that indicate a unique record to compare between dataframes.}
 }
 \description{
 This function compares all of the variables in two similar dataframes to determine if the values in the data have changed.
