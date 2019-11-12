@@ -18,6 +18,6 @@ This function compares all of the variables in two similar dataframes to determi
 This is helpful for identifying changes when a dataset is updated, similar to SAS PROC COMPARE.
 }
 \examples{
-compare<-function(new=new_df, old_df, id)
+compare(new=new_df, old_df, id)
 }
 \keyword{Compare}

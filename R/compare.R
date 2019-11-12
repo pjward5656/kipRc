@@ -8,7 +8,7 @@
 #' @keywords Compare
 #' @export
 #' @examples
-#' compare<-function(new=new_df, old_df, id)
+#' compare(new=new_df, old_df, id)
 #' @importFrom magrittr %>%
 #'
 compare<-function(new, old, ...){
