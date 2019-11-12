@@ -1,5 +1,5 @@
 Package: kipRc
-Title: What the Package Does (One Line, Title Case)
+Title: Common Functions used by KIPRC Analysts
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Patrick",
