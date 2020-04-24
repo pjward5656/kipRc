@@ -1,13 +1,14 @@
 #' Add CSTE drug overdose indicators to ICD-10-CM coded hospitalization data
 #'
 #' This function adds indicator (0,1) variables to emergency department or inpatient hospitalization claims data.
-#' For definitions, see: https://resources.cste.org/ICD-10-CM/Standardized%20Validation%20Datasets/Indicator-Specific%20Regular%20Expressions_2_5_20.pdf
+#' For definitions, see:
+#' https://resources.cste.org/ICD-10-CM/Standardized%20Validation%20Datasets/Indicator-Specific%20Regular%20Expressions_2_5_20.pdf
 #' @param data The dataframe containing claims data.
 #' @param diag_codes A vector of quoted variable names representing the diagnosis codes in the data. Default is KIPRC's field names.
 #' @keywords ICD-10-CM, CSTE, Overdose
 #' @export
 #' @examples
-#' ip_data %>% cste_indicators()
+#' cste_indicators(ipdata)
 #' @importFrom magrittr %>%
 #'
 cste_indicators<-function(data, diag_codes=c("DIAG1",  "DIAG2",  "DIAG3",  "DIAG4",  "DIAG5",  "DIAG6",  "DIAG7",  "DIAG8",
