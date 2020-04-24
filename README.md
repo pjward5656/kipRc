@@ -24,6 +24,10 @@ Currently:
   `subs_lu`-table that converts KIPRC REDCap substance numbers to the substance
   
   `UCOD` vector for drug overdose deaths
+  
+  `cste_indicators` Function that addes CSTE overdose indicators to hospital claims data
+  
+  `icd_indicators` Function that adds indicator variables for any ICD-10-CM code a user wishes to identify to hospital claims data.
 
 To be added:
 
