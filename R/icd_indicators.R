@@ -9,7 +9,7 @@
 #' @keywords ICD-10-CM
 #' @export
 #' @examples
-#' ip_data %>% icd_indicators(icd_codes=c("(T401.[1-4])(A|$|\b)", "(T405.[1-4])(A|$|\b)"), new_var_names=c("heroin", "cocaine"))
+#' icd_indicators(ipdata, icd_codes=c("(T401.[1-4])(A|$|\b)", "(T405.[1-4])(A|$|\b)"), new_var_names=c("heroin", "cocaine"))
 #' @importFrom magrittr %>%
 #'
 icd_indicators<-function(data, icd_codes, new_var_names, 
