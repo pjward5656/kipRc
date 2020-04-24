@@ -4,10 +4,10 @@
 \alias{cste_indicators}
 \title{Add CSTE drug overdose indicators to ICD-10-CM coded hospitalization data}
 \usage{
-cste_indicators<-function(data, diag_codes=c("DIAG1",  "DIAG2",  "DIAG3",  "DIAG4",  "DIAG5",  "DIAG6",  "DIAG7",  "DIAG8",
-                                             "DIAG9",  "DIAG10", "DIAG11", "DIAG12", "DIAG13", "DIAG14", "DIAG15", "DIAG16",
-                                             "DIAG17", "DIAG18", "DIAG19", "DIAG20", "DIAG21", "DIAG22", "DIAG23", "DIAG24",
-                                             "DIAG25", "ECODE1", "ECODE2", "ECODE3","ECODE4", "ECODE5", "ECODE6"))
+cste_indicators(data, diag_codes=c("DIAG1",  "DIAG2",  "DIAG3",  "DIAG4",  "DIAG5",  "DIAG6",  "DIAG7",  "DIAG8",
+                                   "DIAG9",  "DIAG10", "DIAG11", "DIAG12", "DIAG13", "DIAG14", "DIAG15", "DIAG16",
+                                   "DIAG17", "DIAG18", "DIAG19", "DIAG20", "DIAG21", "DIAG22", "DIAG23", "DIAG24",
+                                   "DIAG25", "ECODE1", "ECODE2", "ECODE3","ECODE4", "ECODE5", "ECODE6"))
 }
 \arguments{
 \item{data}{The dataframe containing claims data.}
