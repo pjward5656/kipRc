@@ -21,6 +21,6 @@ This function adds indicator (0,1) variables to emergency department or inpatien
 Similar to cste_indicators, but in this case the user defines the ICD-10-CM codes to search.
 }
 \examples{
-ip_data %>% icd_indicators(icd_codes=c("(T401.[1-4])(A|$|\b)", "(T405.[1-4])(A|$|\b)"), new_var_names=c("heroin", "cocaine"))
+icd_indicators(ipdata, icd_codes=c("(T401.[1-4])(A|$|\b)", "(T405.[1-4])(A|$|\b)"), new_var_names=c("heroin", "cocaine"))
 }
 \keyword{ICD-10-CM}
