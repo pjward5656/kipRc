@@ -15,9 +15,10 @@ cste_indicators(data, diag_codes=c("DIAG1",  "DIAG2",  "DIAG3",  "DIAG4",  "DIAG
 }
 \description{
 This function adds indicator (0,1) variables to emergency department or inpatient hospitalization claims data.
-For definitions, see: https://resources.cste.org/ICD-10-CM/Standardized%20Validation%20Datasets/Indicator-Specific%20Regular%20Expressions_2_5_20.pdf
+For definitions, see:
+https://resources.cste.org/ICD-10-CM/Standardized%20Validation%20Datasets/Indicator-Specific%20Regular%20Expressions_2_5_20.pdf
 }
 \examples{
-ip_data %>% cste_indicators()
+cste_indicators(ipdata)
 }
 \keyword{ICD-10-CM}
